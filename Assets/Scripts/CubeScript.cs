@@ -10,15 +10,7 @@ public class CubeScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		Debug.Log ("material:" + miningEffect.GetComponent<ParticleSystemRenderer> ().sharedMaterial);
-//		Debug.Log ("material2:" + GetComponent<MeshRenderer> ().material);
-//		ParticleSystemRenderer re = miningEffect.GetComponent<ParticleSystemRenderer> () ;
-//		re.renderMode = ParticleSystemRenderMode.Billboard;
 		miningEffect.GetComponent<ParticleSystemRenderer> ().sharedMaterial = gameObject.GetComponent<MeshRenderer> ().material;
-//		Debug.Log ("material3:" + miningEffect.GetComponent<ParticleSystemRenderer> ().sharedMaterial);
-//		miningEffect.GetComponent<ParticleSystemRenderer> ().renderMode = ParticleSystemRenderMode.Billboard;
-//		Debug.Log ("material4:" + miningEffect.GetComponent<ParticleSystemRenderer> ().sharedMaterial);
-
 	}
 
 	void Awake () {
@@ -37,7 +29,6 @@ public class CubeScript : MonoBehaviour {
 	}
 
 	void OnMouseUp() {
-		Debug.Log ("OnMouseUp");
 		GameObject effect = Instantiate (miningEffect);
 		effect.transform.position = transform.position;
 		Destroy (effect, 2f);
